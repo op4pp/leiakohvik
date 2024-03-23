@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teie Veebisait</title>
+    <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Miriam Libre', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #0f1531;
+            color: #fff;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        .header .start-button {
+            background-color: #23368d;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .header .start-button:hover {
+            background-color: #1e2f7a;
+        }
+        .header .start-button:active {
+            background-color: #152056;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #eee;
+        }
+        .menu a {
+            color: #2a2f6c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .menu a:hover {
+            color: #23368d;
+        }
+        .content {
+            padding: 20px;
+            background-color: #fff;
+        }
+        .footer {
+            padding: 20px;
+            background-color: #1d224d;
+            color: #fff;
+            text-align: center;
+        }
+        .static-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #ddd;
+        }
+        .static-content .text-and-button {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .static-content h2 {
+            margin-right: 20px;
+            font-size: 1.5em;
+        }
+        .static-content button {
+            font-family: 'Miriam Libre', sans-serif;
+            background-color: #23368d;
+            border-radius: 20px;
+            padding: 10px 15px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .static-content button:hover {
+            background-color: #1e2f7a;
+        }
+        .static-content button:active {
+            background-color: #152056;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+		.highlight-text {
+			text-align: center;
+			font-size: 1.5em;
+			margin-top: 20px;
+		}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#" id="home">
+            <img src="leiakohvik_sinine2.png" alt="Ettevõtte logo" class="logo">
+        </a>
+        <a href="registreerimine.html" class="start-button">Alusta kasutamist</a>
+    </div>
+    <div class="menu">
+        <a href="#" id="who-we-are">Kes me oleme?</a> |
+        <a href="#" id="what-we-offer">Mida me pakume?</a> |
+        <a href="#" id="ask-help">Küsi abi</a>
+    </div>
+    <div class="content" id="content">
+        <h1>Leia värsked ja kodused toidud kodukohvikutest!</h1>
+        <p>Siin on mõned asjad, mida peaksite teadma meie ettevõtte kohta.</p>
+    </div>
+	<div class="static-content">
+		<div class="text-and-button">
+			<h2>Otsi kodukohvikuid</h2>
+			<a href="kodukohvikud.html" class="static-button"><button id="search-button">Otsima</button></a>
+		</div>
+		<div class="text-and-button">
+			<h2>Lisa enda kodukohvik</h2>
+			<a href="registreerimine.html"><button>Lisama</button></a>
+		</div>
+	</div>
+	<div class="highlight-text"><b>Esiletõstetud kodukohvikud</b></div> <!-- Lisa uus div siia -->
+	<div class="image-gallery">
+		<img src="kohvik1.jpeg" alt="Pilt 1">
+		<img src="kohvik2.jpeg" alt="Pilt 2">
+		<img src="kohvik3.jpeg" alt="Pilt 3">
+        <!-- Lisa rohkem pilte vastavalt vajadusele -->
+    </div>
+    <div class="footer">
+        © 2024 -. Kõik õigused kaitstud.
+    </div>
+    <script>
+        document.getElementById('home').addEventListener('click', function() {
+            document.getElementById('content').innerHTML = '<h1>Leia värsked ja kodused toidud kodukohvikutest!</h1><p>Siin on mõned asjad, mida peaksite teadma meie ettevõtte kohta.</p>';
+        });
+        document.getElementById('who-we-are').addEventListener('click', function() {
+            document.getElementById('content').innerHTML = '<h1>Kes me oleme?</h1><p>Siin on info meie kohta.</p>';
+        });
+        document.getElementById('what-we-offer').addEventListener('click', function() {
+            document.getElementById('content').innerHTML = '<h1>Mida me pakume?</h1><p>Siin on info meie pakkumiste kohta.</p>';
+        });
+        document.getElementById('ask-help').addEventListener('click', function() {
+            document.getElementById('content').innerHTML = '<h1>Küsi abi</h1><p>Probleemide korral pöörduge palun <b>andres@leiakohvik.ee</b>.</p>';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreerimine / Sisselogimine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Miriam Libre', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0f1531;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2a2f6c;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #23368d;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Miriam Libre', sans-serif;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #23368d;
+        }
+        .back-link a {
+            color: #23368d;
+            text-decoration: none;
+        }
+        #toggle-login {
+            color: #23368d;
+            cursor: pointer;
+        }
+        #toggle-login span {
+            color: #23368d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registreerimine / Sisselogimine</h1>
+        <!-- Näidisregistreerimisvorm -->
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="username">Kasutajanimi:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Salasõna:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registreeri</button>
+            </div>
+        </form>
+        
+        <!-- Näidississelogimisvorm -->
+        <form id="login-form" style="display:none;">
+            <div class="form-group">
+                <label for="login-username">Kasutajanimi:</label>
+                <input type="text" id="login-username" name="login-username" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Salasõna:</label>
+                <input type="password" id="login-password" name="login-password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Logi sisse</button>
+            </div>
+        </form>
+        
+        <p id="toggle-login" style="text-align: center;">Kui teil on juba konto, logige sisse <span>siin</span>.</p>
+        <div class="back-link">
+            <a href="index.html">Tagasi tavalehele</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggle-login').addEventListener('click', function() {
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('toggle-login').style.display = 'none';
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Siin saate lisada sisselogimise tegevuse, kui soovite
+            alert('Sisselogimine edukas!');
+        });
+
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Siin saate lisada registreerimise tegevuse, kui soovite
+            alert('Registreerimine edukas!');
+        });
+    </script>
+</body>
+</html>
